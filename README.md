@@ -12,3 +12,5 @@ blue
 yellow
 cyan 
 magenta
+
+''' python paint.py ''' 
