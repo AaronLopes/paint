@@ -13,4 +13,6 @@ yellow
 cyan 
 magenta
 
-''' python paint.py ''' 
+```python
+python paint.py
+```
