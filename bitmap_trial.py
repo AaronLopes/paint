@@ -21,9 +21,25 @@ c_i = 0
 
 
 # 1d interpolation, a = 2 (filter size), y = x0
-def interpolate(im):
-	lanczos_img = cv2.resize(im, dsize=(1200, 1600), fx=4, fy=4, interpolation=cv2.INTER_LANCZOS4)
+
+"""def interpolate(im):
+	lanczos_img = cv2.resize(im, dsize=(1600, 1200), fx=4, fy=4, interpolation=cv2.INTER_LANCZOS4)
 	return lanczos_img
+"""
+
+
+def lanczos(y):
+	return int(10 * np.sin(((2*np.pi)/40)*y))
+
+
+def interpolate(im):
+	for r in range(len(im)):
+		for c in range(len(im[r])):
+			color = im[r][c]
+			if np.array_equal(color, np.array([255, 255, 255])):
+				pass
+			else:
+				im[r][c + lanczos(c)] = color
 
 
 # mouse callback function
@@ -40,7 +56,7 @@ def draw_circle(event, x, y, flags, param):
 
 
 # create a black image, a window, and bind the function to window
-img = np.full((1600, 1200, 3), 255, dtype=np.uint8)
+img = np.full((400, 400, 3), 255, dtype=np.uint8)
 cv2.namedWindow('image')
 cv2.setMouseCallback('image', draw_circle)
 
@@ -48,7 +64,7 @@ while 1:
 	cv2.imshow('image', img)
 	k = cv2.waitKey(1) & 0xFF
 	if k == ord('m'):
-		img = interpolate(img)
+		interpolate(img)
 	elif k == ord('c'):
 		c_i = (c_i + 1) % 8
 	elif k == 27:
