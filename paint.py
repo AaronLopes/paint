@@ -56,7 +56,7 @@ def draw_circle(event, x, y, flags, param):
 
 
 # create a black image, a window, and bind the function to window
-img = np.full((400, 400, 3), 255, dtype=np.uint8)
+img = np.full((1600, 1200, 3), 255, dtype=np.uint8)
 cv2.namedWindow('image')
 cv2.setMouseCallback('image', draw_circle)
 
