@@ -7,7 +7,7 @@ Paint App built using Numpy and OpenCV libraries, incorporating Lanczos resampli
 python paint.py
 ```
 
-To cycle through colors, press 'c'. To apply lanczos interpolation, press 'm'. Colors are ordered like so:
+To cycle through colors, press 'c'. To apply lanczos interpolation, press 'm'. To save file, right click on canvas. Colors are ordered like so:
 
 black
 white 
