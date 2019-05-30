@@ -2,6 +2,11 @@
 Paint App built using Numpy and OpenCV libraries, incorporating Lanczos resampling and alpha compositing.
 
 # usage
+
+```python
+python paint.py
+```
+
 To cycle through colors, press 'c'. To apply lanczos interpolation, press 'm'. Colors are ordered like so:
 
 black
@@ -13,6 +18,3 @@ yellow
 cyan 
 magenta
 
-```python
-python paint.py
-```
